@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 import java.util.Random;
+ 
 /**
  *
  * @author pedro
@@ -11,6 +12,13 @@ import java.util.Random;
 public class Pantheon extends Campeao {
     
     Random gerador = new Random();
+
+    public void definir_Pantheon(){
+        this.vida = 433.0;
+        this.DDA = 50.7;
+        this.mana = 210.0;
+        this.DPH = 0.0;
+    }
     
     public void Ataque_basico(Campeao alvo) {
         alvo.vida = alvo.vida - (20 + 2*this.DDA);

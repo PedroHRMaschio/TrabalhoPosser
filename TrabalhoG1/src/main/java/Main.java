@@ -24,12 +24,13 @@ public class Main {
         System.out.println("Bem vindo ao League of Legends em Java\n");
         System.out.println("INSTRUCÕES:");
         System.out.println("Nessa abstracão apresentamos a simulacão de um combate entre MonoDedoYi e Pantheon");
-        System.out.println("O primeiro a jogar e o MasterYi e o jogador deve selecionar a habilidade sendo Q, W ou E");
+        System.out.println("O primeiro a jogar e o MasterYi e o jogador deve selecionar a habilidade sendo Q, W ou E\n ou optar por dar um ataque básico usando a tecla A e ainda recuperar mana");
         System.out.println("A seguir Pantheon joga seguindo a mesma logica do jogador anterior\n");
         
 
         while(true){
             System.out.println("Vida MasterYi: "+masterYi.vida+"                         "+"Vida Phanteon: "+pantheon.vida);
+            System.out.println("Mana MasterYi: "+masterYi.mana+"                         "+"Mana Phanteon: "+pantheon.mana);
             System.out.println("\nVez do MonoDedo, por favor digite a habilidade");
             String input;
             input = reader.readLine();
@@ -57,6 +58,7 @@ public class Main {
             }
             
             System.out.println("Vida MasterYi: "+masterYi.vida+"                         "+"Vida Phanteon: "+pantheon.vida);
+            System.out.println("Mana MasterYi: "+masterYi.mana+"                         "+"Mana Phanteon: "+pantheon.mana);
             
             System.out.println("\nVez do Pantheon, por favor digite a habilidade");
             

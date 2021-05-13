@@ -14,6 +14,7 @@ public class Pantheon extends Campeao {
     Random gerador = new Random();
 
     public void definir_Pantheon(){
+        this.nome = "Pantheon";
         this.vida = 433.0;
         this.DDA = 50.7;
         this.mana = 210.0;
@@ -22,16 +23,21 @@ public class Pantheon extends Campeao {
     }
     
     public void Ataque_basico(Campeao alvo) {
-        alvo.vida = alvo.vida - (20 + 2*this.DDA);
+        Double dano = 20 + 2*this.DDA;
+        alvo.vida = alvo.vida - dano;
         this.mana = this.mana + 100;
+        System.out.println(alvo.nome+" perdeu "+dano+" de vida");
+        System.out.println("Pantheon regenerou 100 de sua mana");
     }
     
     public void Hab_Q(Campeao alvo) {
         if(gerador.nextInt(100) <= 20){
             System.out.println("Pantheon errou a habilidade");
         }else if(this.mana >= 45){
-            alvo.vida = alvo.vida - (65 + 1.4*this.DDA);
+            Double dano = 65 + 1.4*this.DDA;
+            alvo.vida = alvo.vida - dano;
             this.mana = this.mana - 45;
+            System.out.println(alvo.nome+" perdeu "+dano+" de vida");
         }else{
             System.out.println("Mana insuficiente para usar esta habilidade");
         }
@@ -41,8 +47,10 @@ public class Pantheon extends Campeao {
         if(gerador.nextInt(100) <= 20) {
             System.out.println("Pantheon errou a habilidade");
         }else if(this.mana >= 55) {
-            alvo.vida = alvo.vida - (50 + this.DPH);
+            Double dano = 50 + this.DPH;
+            alvo.vida = alvo.vida - dano;
             this.mana = this.mana - 55;
+            System.out.println(alvo.nome+" perdeu "+dano+" de vida");
         }else{
             System.out.println("Mana insuficiente para usar esta habilidade");
         }
@@ -52,8 +60,10 @@ public class Pantheon extends Campeao {
         if(gerador.nextInt(100) <= 40) {
             System.out.println("Pantheon errou a habilidade");
         }else if(this.mana >= 45) {
-            alvo.vida = alvo.vida - (40 + 1.8*this.DDA);
+            Double dano = 40 + 1.8*this.DDA;
+            alvo.vida = alvo.vida - dano;
             this.mana = this.mana - 45;
+            System.out.println(alvo.nome+" perdeu "+dano+" de vida");
         }else{
             System.out.println("Mana insuficiente para usar esta habilidade");
         }

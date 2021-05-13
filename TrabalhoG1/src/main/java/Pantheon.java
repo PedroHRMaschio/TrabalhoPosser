@@ -18,6 +18,7 @@ public class Pantheon extends Campeao {
         this.DDA = 50.7;
         this.mana = 210.0;
         this.DPH = 0.0;
+        this.posicao = PosicaoCampeao.TOP;
     }
     
     public void Ataque_basico(Campeao alvo) {

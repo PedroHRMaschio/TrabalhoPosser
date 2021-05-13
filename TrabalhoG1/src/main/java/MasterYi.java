@@ -16,6 +16,7 @@ public class MasterYi extends Campeao{
         this.DDA = 55.0;
         this.mana = 180.0;
         this.DPH = 0.0;
+        this.posicao = PosicaoCampeao.TOP;
     }
     
     public void Ataque_basico(Campeao alvo) {
@@ -54,3 +55,4 @@ public class MasterYi extends Campeao{
         }
     }
 }
+

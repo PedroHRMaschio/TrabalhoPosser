@@ -9,5 +9,17 @@
  * @author pedro
  */
 public class Torre {
-    Double Vida, DDA;
+    LocalTorre local;
+    Double Vida, DDA, armadura, MR;
+    Boolean possui_barricada;
+    int barricadas = 5;
+    
+    public void CalculoBarricada(int tempo_jogo) { //Tempo em segundos
+        if(tempo_jogo >= 460){
+            this.possui_barricada = false;
+            this.barricadas = 0;
+            this.armadura = this.armadura*0.5;
+            this.MR = this.MR*0.5;
+        }
+    }
 }

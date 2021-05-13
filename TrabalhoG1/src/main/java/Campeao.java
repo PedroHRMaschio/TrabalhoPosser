@@ -12,6 +12,7 @@ public class Campeao {
     public String nome, origem, lore;
     public Double vida, mana, DDA, DPH, ATKS, VDM, AH, armadura, MR, alcance;// DDA = dano de ataque; DPH = Poder de habilidade; ATKS = Velicidade de ataque; VDM = velocidade de movimento; AH = aceleração de habilidade;
     public int Ouro;
+    public PosicaoCampeao posicao;
     
     public void Set_campeao(String nome, String origem, String lore){
         this.nome = nome;

@@ -9,5 +9,8 @@
  * @author pedro
  */
 public class Minion {
+    String nome;
+    Boolean ranged, super_minion;
+    Double vida, DDA, armadura, MR;
     
 }

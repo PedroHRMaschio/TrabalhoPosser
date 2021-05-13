@@ -1,11 +1,9 @@
-import java.io.IOException;
+import java.io.*;
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
@@ -14,6 +12,7 @@ import java.util.logging.Logger;
 public class Main {
 
     public static void main(String [] args ) throws IOException{
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         Pantheon pantheon = new Pantheon();
 
         pantheon.definir_Pantheon();
@@ -28,24 +27,23 @@ public class Main {
         System.out.println("O primeiro a jogar e o MasterYi e o jogador deve selecionar a habilidade sendo Q, W ou E");
         System.out.println("A seguir Pantheon joga seguindo a mesma logica do jogador anterior\n");
         
-        char input = 'q';
 
-        while(true){    
-            System.out.println("Vez do MonoDedo, por favor digite a habilidade");
-            try {
-                input = (char)System.in.read();
-            } catch (IOException ex) {
-                Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
-            }
+        while(true){
+            System.out.println("Vida MasterYi: "+masterYi.vida+"                         "+"Vida Phanteon: "+pantheon.vida);
+            System.out.println("\nVez do MonoDedo, por favor digite a habilidade");
+            String input;
+            input = reader.readLine();
             
             switch(input){
-                case 'q':
+                case "a":
+                    masterYi.Ataque_basico(pantheon);
+                case "q":
                     masterYi.Hab_Q(pantheon);
                     break;
-                case 'w':
+                case "w":
                     masterYi.Hab_W();
                     break;
-                case 'e':
+                case "e":
                     masterYi.Hab_E(pantheon);
                     break;
                 default:
@@ -58,18 +56,22 @@ public class Main {
                 break;
             }
             
-            System.out.println("Vez do Pantheon, por favor digite a habilidade");
+            System.out.println("Vida MasterYi: "+masterYi.vida+"                         "+"Vida Phanteon: "+pantheon.vida);
             
-            input = (char)System.in.read();
+            System.out.println("\nVez do Pantheon, por favor digite a habilidade");
+            
+            input = reader.readLine();
             
             switch(input){
-                case 'q':
+                case "a":
+                    pantheon.Ataque_basico(masterYi);
+                case "q":
                     pantheon.Hab_Q(masterYi);
                     break;
-                case 'w':
+                case "w":
                     pantheon.Hab_W(masterYi);
                     break;
-                case 'e':
+                case "e":
                     pantheon.Hab_E(masterYi);
                     break;
                 default:
